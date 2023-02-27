@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./skarb.css">
+    <title>Znajdź skarb!</title>
+</head>
+<body>
+    <header id="heder">
+        <h1>ZNAJDŹ SKARB</h1>
+        <h3>twój czas: <span id="tajm"></span></h3>
+        <button type="button" onclick="ruszaj()">Zacznij poszukiwania</button>
+    </header>
+    <aside style="display:none" id="aside">
+        <main>
+        </main>
+        <div id='cz'>
+            <img id='tre' src="./skarb.png" onmouseover='otfusz(this)' onmouseout='zamknij(this)' onclick="klik(this)">
+            <p>ikonka skarbu należy do użytkownika Smashicons z portalu Flaticon</p>
+            <p>pomysł i wykonanie: Filip Pomin</p>
+        </div>
+    </aside>
+</body>
+<script>
+    function ruszaj(){
+        czas = (Date.now() /1000);
+        let troll = Math.round(Math.random()*100);
+        console.log(troll);
+        document.getElementById('tre').style.left = troll+'vw';
+        document.getElementById('aside').style.display = 'block';
+    }
+
+    function otfusz(x){
+        x.src = "./skarb1.png";
+    }
+    function zamknij(x){
+        x.src = "./skarb.png";
+    }
+    function klik(x){
+        var czstop = (Date.now() /1000);
+
+        var roznica = (czstop - czas).toFixed(2);
+        document.getElementById('tajm').innerHTML = roznica+' s';
+        document.getElementById('aside').style.display = 'none';
+        window.location.hash='heder';
+    }
+
+    
+</script>
+</html>

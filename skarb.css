@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Combo|Nabla&effect=neon');
+
+* {scrollbar-width: none;}
+
+body {margin: 0;
+     padding: 0;
+     font-family: 'Combo';}
+
+header {background-image: linear-gradient(gold, white);
+        height: 100vh;
+        border-top: 1px gold solid;
+        text-align: center;}
+
+main {height: 10000vh;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     background-image: linear-gradient(white, black);}
+
+#cz {height: 30vh;
+    background-color: black;}
+
+    #cz > img {height: 60px;}
+
+    #cz > p {color: #353535;
+             width: 100%;
+             text-align: center;}
+
+img {position: sticky;
+     bottom: 10vh;}
+
+button {background-color: goldenrod;
+          border: none;
+          font-family: 'Combo';
+          width: 100px;
+          box-shadow: 5px 5px 5px black;
+          transition-duration: 0.3s;}
+
+          button:hover {background-color: beige;
+                         box-shadow: -5px -5px 5px black;
+                         transition-duration: 0.3s;}
